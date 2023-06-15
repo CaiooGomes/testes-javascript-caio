@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/CaiooGomes/testes-javascript-caio/issues"
   },
-  "homepage": "https://github.com/CaiooGomes/testes-javascript-caio#readme"
+  "homepage": "https://github.com/CaiooGomes/testes-javascript-caio#readme",
+  "dependencies": {
+    "jsdom": "^22.1.0",
+    "regenerator-runtime": "^0.13.11"
+  }
 }
