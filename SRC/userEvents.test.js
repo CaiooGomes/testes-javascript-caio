@@ -50,5 +50,32 @@ describe('testando o index.html',()=>{
             qtdTrs = container.querySelectorAll("#tbody tr")
             expect(qtdTrs.length).toBe(3)
         })
+        it('checar valor',()=>{
+            const botao = getByText(container,'Clique aqui!');
+            const nomeInput = getByTestId(container,'nome-anime');
+            const descInput = getByTestId(container,'desc-anime');
+
+            nomeInput.value = 'One Piece'
+            descInput.value = 'Pirata que estica'
+
+            fireEvent.click(botao);
+
+            let qtdTrs = container.querySelectorAll("#tbody tr")
+            expect(qtdTrs[0].children[1].innerHTML).toBe('One Piece')
+            expect(qtdTrs[0].children[2].innerHTML).toBe('Pirata que estica')
+        })
+        it('checa se o valor fica vazio',()=>{
+            const botao = getByText(container,'Clique aqui!');
+            const nomeInput = getByTestId(container,'nome-anime');
+            const descInput = getByTestId(container,'desc-anime');
+
+            nomeInput.value = 'digitei algo'
+            descInput.value = 'digitei de novo'
+
+            fireEvent.click(botao);
+
+            expect(nomeInput.value).toBe('')
+            expect(descInput.value).toBe('')
+        })
     })
 })
