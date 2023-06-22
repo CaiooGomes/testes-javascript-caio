@@ -32,6 +32,23 @@ describe('testando o index.html',()=>{
 
             let qtdTrs = container.querySelectorAll("#tbody tr")
             expect(qtdTrs.length).toBe(1)
+
+            nomeInput.value = 'digitei pela segunda vez'
+            descInput.value = 'digitei porque quis'
+
+            fireEvent.click(botao);
+
+            qtdTrs = container.querySelectorAll("#tbody tr")
+            expect(qtdTrs.length).toBe(2)
+
+            
+            nomeInput.value = 'digitei pela terceira vez'
+            descInput.value = 'digitei porque sim'
+
+            fireEvent.click(botao);
+
+            qtdTrs = container.querySelectorAll("#tbody tr")
+            expect(qtdTrs.length).toBe(3)
         })
     })
 })
